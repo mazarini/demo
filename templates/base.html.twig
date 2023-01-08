@@ -14,14 +14,14 @@
     </head>
     <body>
         <div class="container">
-
             {% block body %}
                 {% block header %}{% endblock %}
                 <div class="row">
                     <div class="col-2">
                         {% block side %}
                             <ul>
-                                <li><a href='/'>Home</a></li>
+                                <li><a href="{{ path('app_home') }}">Home</a></li>
+                                <li><a href="{{ path('app_entity_index') }}">Entity</a></li>
                             </ul>
                         {% endblock %}
                     </div>
@@ -31,6 +31,7 @@
                 </div>
                 {% block footer %}{% endblock %}
             {% endblock %}
+            {% block static %}{% endblock %}
             {% block javascripts %}
                 {{ encore_entry_script_tags('app') }}
             {% endblock %}
